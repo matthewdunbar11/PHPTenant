@@ -1,5 +1,6 @@
-{
-    "name": "matthewdunbar11/churchhome",
+    {
+    "name": "PHPTenant",
+    "description": "Provides mutli-tenant capabilities to PHP",
     "require": {
         "phpauth/phpauth": "^1.1",
         "twig/twig": "~1.0"
