@@ -14,6 +14,8 @@ spl_autoload_register(function ($class_name) {
     @ include 'models/' . $class_name . '.php';
 });
 
+include '../PHPTenant.php';
+
 $PHPTenant = new PHPTenant();
 
 $product = new Product();
