@@ -1,5 +1,5 @@
     {
-    "name": "matthewdunbar11/PHPTenant",
+    "name": "matthewdunbar11/php-tenant",
     "description": "Provides mutli-tenant capabilities to PHP",
     "require": {
         "phpauth/phpauth": "^1.1",
