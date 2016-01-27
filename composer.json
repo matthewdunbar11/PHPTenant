@@ -1,0 +1,16 @@
+{
+    "name": "matthewdunbar11/churchhome",
+    "require": {
+        "phpauth/phpauth": "^1.1",
+        "twig/twig": "~1.0"
+    },
+    "config": {
+        "vendor-dir": "public/vendor"
+    },
+    "authors": [
+        {
+            "name": "Matthew Dunbar",
+            "email": "matthewdunbar11@gmail.com"
+        }
+    ]
+}
