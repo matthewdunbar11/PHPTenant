@@ -1,5 +1,6 @@
 <?php
-
+namespace PHPTenant;
+use \PDO;
 class DB_Base {
 	protected $pdo;
 	public $ID;

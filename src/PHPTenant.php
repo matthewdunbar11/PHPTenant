@@ -1,4 +1,5 @@
 <?php
+namespace PHPTenant;
 
 class PHPTenant {
 	private $router;
@@ -11,17 +12,17 @@ class PHPTenant {
 		$pathParts = explode("/", $path);
 
 		$actions = $this->router->negotiate($path);
-
-		foreach($actions['actions'] as $action) {
-			if(is_array($action)) {
-				$class = $action[0];
-				$method = $action[1];
-				$class->{$method}($actions['args']);
-			}
-			else {
-				$action($actions['args']);
+		if(is_array($actions)) {
+			foreach($actions['actions'] as $action) {
+				if(is_array($action)) {
+					$class = $action[0];
+					$method = $action[1];
+					$class->{$method}($actions['args']);
+				}
+				else {
+					$action($actions['args']);
+				}
 			}
 		}
-
 	}
 }

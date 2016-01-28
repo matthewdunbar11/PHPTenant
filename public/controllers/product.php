@@ -1,10 +1,15 @@
 <?php
-
+use PHPTenant\Router;
 class Product extends Component {
 	public function routes($router) {		
 		$router->register('products', 'test123');
+		$router->register('index.php', array($this, 'test'));
 		$router->register('products', array($this, 'all'));
 		$router->register('product/:id', array($this, 'single'));
+	}
+	
+	public function test() {
+		echo 'Requested index';
 	}
 
 	public function all($args) {

@@ -1,5 +1,5 @@
 <?php
-
+use PHPTenant\DB_Base;
 class ProductModel extends DB_Base {
 	public static $tableName = 'product';	
 	public $name;

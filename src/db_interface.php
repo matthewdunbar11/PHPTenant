@@ -1,4 +1,5 @@
 <?php
+namespace PHPTenant;
 class DB_Interface {
 	protected $pdo;
 	public function __construct() {

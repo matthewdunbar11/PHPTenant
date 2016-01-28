@@ -1,5 +1,5 @@
 <?php
-
+namespace PHPTenant;
 
 class Router {
 	private static $instance;

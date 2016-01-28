@@ -5,8 +5,10 @@
         "phpauth/phpauth": "^1.1",
         "twig/twig": "~1.0"
     },
-    "config": {
-        "vendor-dir": "public/vendor"
+    "autoload": {
+        "psr-4": {
+            "PHPTenant\\": "src"
+        }
     },
     "authors": [
         {
