@@ -1,0 +1,7 @@
+<h1>This is the product list</h1>
+
+<ul>
+{% for Product in Products %}
+	<li><a href="/product/{{Product.ID}}/edit">{{Product.name}}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>{{Product.name}}</h1>
+<div>Price: ${{Product.price}}</div>
+<div>Size {{Product.size}}</div>
+<div><a href="{{Edit}}">Edit</a></div>
+<div><a href="{{Delete}}">Delete</a></div>
+{% endblock %}

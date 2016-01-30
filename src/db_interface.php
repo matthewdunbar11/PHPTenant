@@ -1,5 +1,6 @@
 <?php
 namespace PHPTenant;
+use \PDO;
 class DB_Interface {
 	protected $pdo;
 	public function __construct() {
@@ -11,16 +12,16 @@ class DB_Interface {
 	}
 
 	public function show($className) {
-	    $sql = 'SELECT * FROM ' . $className::$tableName;
+	    $sql = 'SELECT * FROM ' . $className::$tableName . ';';
 	    $rows = array();
-	    foreach($this->pdo->query($sql) as $row) {
+	    $results = $this->pdo->query($sql);
+	    foreach($results as $row) {
 	    	$tempObject = new $className();
 	    	foreach($row as $field => $value) {
 	    		if(!is_numeric($field)) {
 	    			$tempObject->{$field} = $value;
     			}
 	    	}
-
 	    	$rows[] = $tempObject;
 	    }
 

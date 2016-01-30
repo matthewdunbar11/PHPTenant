@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Update Product</h1>
+<form method="POST" action="/product/{{Product.ID}}/update">
+	<div>
+		<label for="name">Name:
+			<input id="name" name="name" value="{{Product.name}}" />
+		</label>
+	</div>
+	<div>
+		<label for="price">Price:
+			<input id="price" name="price" value="{{Product.price}}" />
+		</label>
+	</div>
+	<div>
+		<label for="size">Size:
+			<input id="size" name="size" value="{{Product.size}}" />
+		</label>
+	</div>
+
+	<button type="submit">Save</button>
+</form>
+
+{% endblock %}

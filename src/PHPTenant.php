@@ -10,7 +10,7 @@ class PHPTenant {
 	public function handleRequest() {
 		$path = substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 1);
 		$pathParts = explode("/", $path);
-
+		$actionFound = false;
 		$actions = $this->router->negotiate($path);
 		if(is_array($actions)) {
 			foreach($actions['actions'] as $action) {
@@ -18,11 +18,16 @@ class PHPTenant {
 					$class = $action[0];
 					$method = $action[1];
 					$class->{$method}($actions['args']);
+					$actionFound = true;
 				}
 				else {
 					$action($actions['args']);
+					$actionFound = true;
 				}
 			}
+		}
+		if(!$actionFound) {
+			echo 'No route was successfully found';
 		}
 	}
 }
